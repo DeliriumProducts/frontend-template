@@ -7,7 +7,6 @@ import {
   Slider,
   Button
 } from 'antd';
-import EmotionButton from '../components/Button';
 
 const FormItem = Form.Item;
 const Option = Select.Option;
