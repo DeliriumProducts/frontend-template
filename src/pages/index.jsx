@@ -31,8 +31,6 @@ export default () => (
         <a href="#">Link</a>
       </FormItem>
 
-      <EmotionButton>Hi!</EmotionButton>
-
       <FormItem label="Switch" labelCol={{ span: 8 }} wrapperCol={{ span: 8 }}>
         <Switch defaultChecked name="switch" />
       </FormItem>

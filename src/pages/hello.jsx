@@ -1,9 +1,14 @@
 import React from 'react';
+import Button from '../components/Button';
 
 import { withRouter } from 'next/router';
 
 function Hello({ router }) {
-  return <>Hello {router.query.message}</>;
+  return (
+    <>
+      <Button> Hello {router.query.message} </Button>
+    </>
+  );
 }
 
 export default withRouter(Hello);
