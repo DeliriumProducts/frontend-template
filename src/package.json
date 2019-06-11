@@ -10,7 +10,7 @@
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.12",
     "@zeit/next-less": "^1.0.1",
-    "antd": "^3.5.4",
+    "antd": "^3.19.3",
     "babel-plugin-import": "^1.7.0",
     "compression": "^1.7.4",
     "dotenv": "^8.0.0",
