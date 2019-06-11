@@ -1,11 +1,13 @@
 import styled from '@emotion/styled';
 
 export default styled.button`
-  font-size: 16px;
+  font-size: 2rem;
   font-family: 'Josefin Sans';
-  font-weight: 500;
-  padding: 5px;
+  font-weight: bold;
+  padding: 2rem;
   border: none;
-  background-color: rgb(220, 220, 220);
-  box-shadow: 14px 7px 0px;
+  color: white;
+  background-color: rgb(217, 66, 53);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.12);
+  border-radius: 7px;
 `;
