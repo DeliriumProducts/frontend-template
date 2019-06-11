@@ -1,5 +1,5 @@
 {
-  "name": "with-ant-design-less",
+  "name": "frontend-template",
   "version": "1.0.0",
   "scripts": {
     "dev": "next",
@@ -21,5 +21,15 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "babel-eslint": "9.x",
+    "eslint": "5.x",
+    "eslint-config-react-app": "^4.0.1",
+    "eslint-plugin-flowtype": "2.x",
+    "eslint-plugin-import": "2.x",
+    "eslint-plugin-jsx-a11y": "6.x",
+    "eslint-plugin-react": "7.x",
+    "eslint-plugin-react-hooks": "1.5.0"
+  }
 }
