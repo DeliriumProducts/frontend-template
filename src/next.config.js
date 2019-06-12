@@ -2,6 +2,8 @@
 const withLess = require('@zeit/next-less');
 const withOffline = require('next-offline');
 const lessToJS = require('less-vars-to-js');
+const TerserPlugin = require('terser-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const fs = require('fs');
 const path = require('path');
 
@@ -39,6 +41,23 @@ module.exports = withOffline(
           test: antStyles,
           use: 'null-loader'
         });
+      }
+
+      if (process.env.NODE_ENV === 'production') {
+        config.plugins = config.plugins.filter(
+          plugin => plugin.constructor.name !== 'UglifyJsPlugin'
+        );
+
+        config.plugins.push(
+          new TerserPlugin({
+            parallel: true,
+            terserOptions: {
+              ecma: 6
+            }
+          })
+        );
+
+        config.plugins.push(new OptimizeCSSAssetsPlugin());
       }
       return config;
     }
