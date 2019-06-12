@@ -3,13 +3,13 @@ import 'firebase/auth';
 import 'firebase/firebase-firestore';
 
 const config = {
-  apiKey: 'AIzaSyDeIjZqQ26u9zcLP0RFWjrLsSF85Q9JDoA',
-  authDomain: 'frontend-template-test.firebaseapp.com',
-  databaseURL: 'https://frontend-template-test.firebaseio.com',
-  projectId: 'frontend-template-test',
-  storageBucket: 'frontend-template-test.appspot.com',
-  messagingSenderId: '59991013837',
-  appId: '1:59991013837:web:3fcfd25df1a9f5ac'
+  apiKey: 'AIzaSyBv3coYY3Irf3Yzmlfq5bf2GVGc1EUSD4I',
+  authDomain: 'frontend-template-48f7f.firebaseapp.com',
+  databaseURL: 'https://frontend-template-48f7f.firebaseio.com',
+  projectId: 'frontend-template-48f7f',
+  storageBucket: 'frontend-template-48f7f.appspot.com',
+  messagingSenderId: '1084133495005',
+  appId: '1:1084133495005:web:511af036f252e7de'
 };
 
 class Firebase {
