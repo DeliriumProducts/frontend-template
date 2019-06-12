@@ -33,15 +33,22 @@ export default class MyApp extends App {
         </Head>
         <Global
           styles={css`
-            * {
-              box-sizing: border-box;
-              padding: 0;
-              margin: 0;
-            }
-
             body {
               min-height: 100%;
-              background-color: rgb(245, 245, 245);
+            }
+
+            * {
+              box-sizing: border-box;
+              margin: 0;
+              padding: 0;
+            }
+
+            html {
+              height: 100%;
+            }
+
+            #__next {
+              min-height: 100vh;
             }
           `}
         />

@@ -1,83 +1,73 @@
-import {
-  Form,
-  Select,
-  InputNumber,
-  DatePicker,
-  Switch,
-  Slider,
-  Button
-} from 'antd';
-import Link from 'next/link';
+import { Layout, Menu, Breadcrumb, Typography } from 'antd';
+import styled from '@emotion/styled';
+import { THEME_VARIABLES } from '../config/env.js';
+import { keyframes } from '@emotion/core';
 
-const FormItem = Form.Item;
-const Option = Select.Option;
+const Container = styled.div`
+  text-align: center;
+`;
+
+const Header = styled.header`
+  min-height: 100vh;
+  display: flex;
+  background-color: #282c34;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+`;
+
+const LogoAnimation = keyframes`
+  from, 20%, 53%, 80%, to {
+    transform: translate3d(0,0,0);
+  }
+
+  40%, 43% {
+    transform: translate3d(0, -30px, 0);
+  }
+
+  70% {
+    transform: translate3d(0, -15px, 0);
+  }
+
+  90% {
+    transform: translate3d(0,-4px,0);
+  }
+`;
+
+const Text = styled.h2`
+  color: white;
+  font-family: 'Josefin Sans';
+`;
+
+const Paragraph = styled.p`
+  color: white;
+  font-family: 'Josefin Sans';
+`;
+
+const Logo = styled.img`
+  animation: ${LogoAnimation} 2s ease infinite;
+  height: 40vmin;
+  pointer-events: none;
+`;
+
+const StyledA = styled.a`
+  text-decoration: none;
+  color: rgb(217, 66, 53);
+`;
 
 export default () => (
-  <div style={{ marginTop: 100 }}>
-    <Form layout="horizontal">
-      <FormItem
-        label="Input Number"
-        labelCol={{ span: 8 }}
-        wrapperCol={{ span: 8 }}
-      >
-        <InputNumber
-          size="large"
-          min={1}
-          max={10}
-          style={{ width: 100 }}
-          defaultValue={3}
-          name="inputNumber"
-        />
-      </FormItem>
-      <FormItem
-        label="Go To other page!"
-        labelCol={{ span: 8 }}
-        wrapperCol={{ span: 8 }}
-      >
-        <Link as={`/hello/template`} href="hello?message=template">
-          <Button type="primary">Hello!</Button>
-        </Link>
-      </FormItem>
-
-      <FormItem label="Switch" labelCol={{ span: 8 }} wrapperCol={{ span: 8 }}>
-        <Switch defaultChecked name="switch" />
-      </FormItem>
-
-      <FormItem label="Slider" labelCol={{ span: 8 }} wrapperCol={{ span: 8 }}>
-        <Slider defaultValue={70} />
-      </FormItem>
-
-      <FormItem label="Select" labelCol={{ span: 8 }} wrapperCol={{ span: 8 }}>
-        <Select
-          size="large"
-          defaultValue="lucy"
-          style={{ width: 192 }}
-          name="select"
-        >
-          <Option value="jack">jack</Option>
-          <Option value="lucy">lucy</Option>
-          <Option value="disabled" disabled>
-            disabled
-          </Option>
-          <Option value="yiminghe">yiminghe</Option>
-        </Select>
-      </FormItem>
-
-      <FormItem
-        label="DatePicker"
-        labelCol={{ span: 8 }}
-        wrapperCol={{ span: 8 }}
-      >
-        <DatePicker name="startDate" />
-      </FormItem>
-      <FormItem style={{ marginTop: 48 }} wrapperCol={{ span: 8, offset: 8 }}>
-        <Button size="large" type="primary" htmlType="submit">
-          OK
-        </Button>
-        <Button size="large" style={{ marginLeft: 8 }}>
-          Cancel
-        </Button>
-      </FormItem>
-    </Form>
-  </div>
+  <Container>
+    <Header>
+      <Logo src="/static/dplogo.png" alt="dp-logo" />
+      <Text>
+        <StyledA href="https://deliriumproducts.me">Delirium Products!</StyledA>{' '}
+        frontend template.
+      </Text>
+      <Paragraph>
+        Edit <code>src/pages/index.jsx</code> and save to reload.
+      </Paragraph>
+    </Header>
+  </Container>
 );
