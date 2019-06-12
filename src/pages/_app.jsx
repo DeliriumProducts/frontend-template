@@ -4,6 +4,7 @@ import { Global, css } from '@emotion/core';
 import Head from 'next/head';
 import React from 'react';
 import NProgress from 'nprogress';
+import '../assets/nprogress.less';
 
 Router.events.on('routeChangeStart', () => {
   NProgress.start();

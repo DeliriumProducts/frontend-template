@@ -7,6 +7,7 @@ import {
   Slider,
   Button
 } from 'antd';
+import Link from 'next/link';
 
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -27,7 +28,15 @@ export default () => (
           defaultValue={3}
           name="inputNumber"
         />
-        <a href="#">Link</a>
+      </FormItem>
+      <FormItem
+        label="Go To other page!"
+        labelCol={{ span: 8 }}
+        wrapperCol={{ span: 8 }}
+      >
+        <Link as={`/hello/template`} href="hello?message=template">
+          <Button type="primary">Hello!</Button>
+        </Link>
       </FormItem>
 
       <FormItem label="Switch" labelCol={{ span: 8 }} wrapperCol={{ span: 8 }}>
