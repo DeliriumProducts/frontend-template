@@ -1,7 +1,8 @@
-import { Layout, Menu, Breadcrumb, Typography } from 'antd';
 import styled from '@emotion/styled';
-import { THEME_VARIABLES } from '../config/env.js';
+import Button from '../components/Button';
+import Link from 'next/link';
 import { keyframes } from '@emotion/core';
+import { THEME_VARIABLES } from '../config/env';
 
 const Container = styled.div`
   text-align: center;
@@ -54,7 +55,7 @@ const Logo = styled.img`
 
 const StyledA = styled.a`
   text-decoration: none;
-  color: rgb(217, 66, 53);
+  color: ${THEME_VARIABLES['@primary-color']};
 `;
 
 export default () => (
@@ -68,6 +69,9 @@ export default () => (
       <Paragraph>
         Edit <code>src/pages/index.jsx</code> and save to reload.
       </Paragraph>
+      <Link as="/hello/template" href="hello?message=template">
+        <Button>Go to hello page</Button>
+      </Link>
     </Header>
   </Container>
 );

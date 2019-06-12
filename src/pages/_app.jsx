@@ -1,6 +1,7 @@
 import App, { Container } from 'next/app';
 import Router from 'next/router';
 import { Global, css } from '@emotion/core';
+import ContextProvider from '../context/providers/contextProvider.jsx';
 import Head from 'next/head';
 import React from 'react';
 import NProgress from 'nprogress';
@@ -31,30 +32,32 @@ export default class MyApp extends App {
         <Head>
           <title>Frontend template!</title>
         </Head>
-        <Global
-          styles={css`
-            body {
-              min-height: 100%;
-            }
+        <ContextProvider>
+          <Global
+            styles={css`
+              body {
+                min-height: 100%;
+              }
 
-            * {
-              box-sizing: border-box;
-              margin: 0;
-              padding: 0;
-            }
+              * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+              }
 
-            html {
-              height: 100%;
-            }
+              html {
+                height: 100%;
+              }
 
-            #__next {
-              min-height: 100vh;
-            }
-          `}
-        />
-        <Container>
-          <Component {...pageProps} />
-        </Container>
+              #__next {
+                min-height: 100vh;
+              }
+            `}
+          />
+          <Container>
+            <Component {...pageProps} />
+          </Container>
+        </ContextProvider>
       </>
     );
   }
