@@ -14,9 +14,15 @@ const config = {
 
 class Firebase {
   constructor() {
-    app.initializeApp(config);
-    this.auth = app.auth();
-    this.db = app.firestore();
+    // https://github.com/zeit/next.js/issues/1999
+    if (!app.apps.length) {
+      app.initializeApp(config);
+      this.auth = app.auth();
+      this.db = app.firestore();
+      this.providers = {
+        google: new app.auth.GoogleAuthProvider()
+      };
+    }
   }
 
   async register(name, email, password) {
@@ -27,6 +33,10 @@ class Firebase {
 
   login(email, password) {
     return this.auth.signInWithEmailAndPassword(email, password);
+  }
+
+  loginWithPopup(provider) {
+    return this.auth.signInWithPopup(this.providers[provider]);
   }
 
   logout() {

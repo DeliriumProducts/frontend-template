@@ -3,7 +3,7 @@ import Router from 'next/router';
 import Spinner from '../components/Spinner';
 import firebase from '../firebase';
 
-const withAuth = Component => () => {
+const withAuth = Component => props => {
   const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
@@ -14,12 +14,12 @@ const withAuth = Component => () => {
         Router.push('/');
       }
     });
-  });
+  }, []);
 
   if (loading) {
     return <Spinner />;
-  } else if (false) {
-    return <Component {...this.props} />;
+  } else {
+    return <Component {...props} />;
   }
 };
 export default withAuth;
