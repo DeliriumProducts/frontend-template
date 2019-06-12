@@ -36,7 +36,9 @@ class Firebase {
   }
 
   loginWithPopup(provider) {
-    return this.auth.signInWithPopup(this.providers[provider]);
+    if (this.providers[provider]) {
+      return this.auth.signInWithPopup(this.providers[provider]);
+    }
   }
 
   logout() {

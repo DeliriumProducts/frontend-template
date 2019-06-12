@@ -69,6 +69,7 @@ export default () => (
       <Paragraph>
         Edit <code>src/pages/index.jsx</code> and save to reload.
       </Paragraph>
+      <br />
       <Link as="/hello/template" href="hello?message=template">
         <Button>Go to hello page</Button>
       </Link>
